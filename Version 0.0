@@ -1,0 +1,371 @@
+
+
+local screen_gui = Instance.new("ScreenGui")
+screen_gui.IgnoreGuiInset = false
+screen_gui.ResetOnSpawn = true
+screen_gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+screen_gui.Parent = workspace
+
+local frame = Instance.new("Frame")
+frame.BackgroundColor3 = Color3.new(0.0941176, 0.160784, 0.172549)
+frame.Position = UDim2.new(0.824000001, 0, 0.657000005, 0)
+frame.Size = UDim2.new(0.175531909, 0, 0.342857122, 0)
+frame.Visible = true
+frame.Parent = screen_gui
+
+local name = Instance.new("Frame")
+name.BackgroundColor3 = Color3.new(0.027451, 0.0470588, 0.0509804)
+name.Position = UDim2.new(0.00195735274, 0, -0.00041919286, 0)
+name.Size = UDim2.new(0.993714094, 0, 0.097486712, 0)
+name.Visible = true
+name.Name = "Name"
+name.Parent = frame
+
+local text_label = Instance.new("TextLabel")
+text_label.Font = Enum.Font.SourceSansBold
+text_label.Text = "Mani Admin 0.0"
+text_label.TextColor3 = Color3.new(1, 1, 1)
+text_label.TextScaled = true
+text_label.TextSize = 14
+text_label.TextWrapped = true
+text_label.BackgroundColor3 = Color3.new(1, 1, 1)
+text_label.BackgroundTransparency = 1
+text_label.Size = UDim2.new(0.993256569, 0, 0.949797094, 0)
+text_label.Visible = true
+text_label.Parent = name
+
+local local_script = Instance.new("LocalScript")
+local_script.Parent = name
+
+local scrolling_frame = Instance.new("ScrollingFrame")
+scrolling_frame.ScrollBarImageColor3 = Color3.new(0, 0, 0)
+scrolling_frame.Active = true
+scrolling_frame.BackgroundColor3 = Color3.new(1, 1, 1)
+scrolling_frame.BackgroundTransparency = 1
+scrolling_frame.Position = UDim2.new(0, 0, 0.092592597, 0)
+scrolling_frame.Size = UDim2.new(0.991342068, 0, 0.898148239, 0)
+scrolling_frame.Visible = true
+scrolling_frame.Parent = frame
+
+local text_label_2 = Instance.new("TextLabel")
+text_label_2.Font = Enum.Font.Unknown
+text_label_2.Text = "Commands"
+text_label_2.TextColor3 = Color3.new(0, 0, 0)
+text_label_2.TextScaled = true
+text_label_2.TextSize = 14
+text_label_2.TextWrapped = true
+text_label_2.BackgroundColor3 = Color3.new(1, 1, 1)
+text_label_2.BackgroundTransparency = 1
+text_label_2.Size = UDim2.new(0.947598279, 0, 0.0358167738, 0)
+text_label_2.Visible = true
+text_label_2.Parent = scrolling_frame
+
+local uilist_layout = Instance.new("UIListLayout")
+uilist_layout.SortOrder = Enum.SortOrder.LayoutOrder
+uilist_layout.Parent = scrolling_frame
+
+local text_label_3 = Instance.new("TextLabel")
+text_label_3.Font = Enum.Font.SourceSansItalic
+text_label_3.Text = "SetHpTo0 - Sets ur hp to 0"
+text_label_3.TextColor3 = Color3.new(1, 1, 1)
+text_label_3.TextScaled = true
+text_label_3.TextSize = 14
+text_label_3.TextWrapped = true
+text_label_3.BackgroundColor3 = Color3.new(1, 1, 1)
+text_label_3.BackgroundTransparency = 1
+text_label_3.Size = UDim2.new(0.947598279, 0, 0.0358167738, 0)
+text_label_3.Visible = true
+text_label_3.Parent = scrolling_frame
+
+local text_label_4 = Instance.new("TextLabel")
+text_label_4.Font = Enum.Font.SourceSansItalic
+text_label_4.Text = "Fly - Makes you swim with an animation"
+text_label_4.TextColor3 = Color3.new(1, 1, 1)
+text_label_4.TextScaled = true
+text_label_4.TextSize = 14
+text_label_4.TextWrapped = true
+text_label_4.BackgroundColor3 = Color3.new(1, 1, 1)
+text_label_4.BackgroundTransparency = 1
+text_label_4.Size = UDim2.new(0.947598279, 0, 0.0358167738, 0)
+text_label_4.Visible = true
+text_label_4.Parent = scrolling_frame
+
+local warning = Instance.new("RemoteEvent")
+warning.Name = "Warning"
+warning.Parent = screen_gui
+
+local text_box = Instance.new("TextBox")
+text_box.Font = Enum.Font.SourceSans
+text_box.PlaceholderText = "write command here"
+text_box.Text = ""
+text_box.TextColor3 = Color3.new(0, 0, 0)
+text_box.TextScaled = true
+text_box.TextSize = 14
+text_box.TextWrapped = true
+text_box.BackgroundColor3 = Color3.new(0.0941176, 0.160784, 0.172549)
+text_box.Position = UDim2.new(0.671732545, 0, 0.947619021, 0)
+text_box.Size = UDim2.new(0.151975691, 0, 0.0507936515, 0)
+text_box.Visible = true
+text_box.Parent = screen_gui
+
+local local_script_2 = Instance.new("LocalScript")
+local_script_2.Parent = text_box
+
+local flying_module = Instance.new("ModuleScript")
+flying_module.Name = "FlyingModule"
+flying_module.Parent = text_box
+
+local flying = Instance.new("LocalScript")
+flying.Disabled = true
+flying.Name = "Flying"
+flying.Parent = text_box
+
+local warn = Instance.new("Frame")
+warn.BackgroundColor3 = Color3.new(0.0941176, 0.160784, 0.172549)
+warn.Position = UDim2.new(-0.275000006, 0, 0.762000024, 0)
+warn.Size = UDim2.new(0.274831235, 0, 0.147619054, 0)
+warn.Visible = true
+warn.Name = "Warn"
+warn.Parent = screen_gui
+
+local uicorner = Instance.new("UICorner")
+uicorner.Parent = warn
+
+local text_label_5 = Instance.new("TextLabel")
+text_label_5.Font = Enum.Font.SourceSans
+text_label_5.TextColor3 = Color3.new(0, 0, 0)
+text_label_5.TextScaled = true
+text_label_5.TextSize = 14
+text_label_5.TextWrapped = true
+text_label_5.BackgroundColor3 = Color3.new(1, 1, 1)
+text_label_5.BackgroundTransparency = 1
+text_label_5.Size = UDim2.new(0.996491253, 0, 0.978494525, 0)
+text_label_5.Visible = true
+text_label_5.Parent = warn
+
+local local_script_3 = Instance.new("LocalScript")
+local_script_3.Parent = warn
+
+local value = Instance.new("BoolValue")
+value.Parent = warn
+
+local text = Instance.new("StringValue")
+text.Name = "Text"
+text.Parent = warn
+
+local frame_2 = Instance.new("Frame")
+frame_2.BackgroundColor3 = Color3.new(0.145098, 0.443137, 1)
+frame_2.Position = UDim2.new(0.0210526325, 0, 0.881720364, 0)
+frame_2.Size = UDim2.new(0.964912295, 0, 0.0967741832, 0)
+frame_2.Visible = true
+frame_2.Parent = warn
+
+--// Modules
+
+local modules = {
+	[flying_module] = function()
+		
+		
+		local module = {
+			
+		
+			Speed = 16, 
+			
+			Whitelist = {},
+			
+			FlyForward = "rbxassetid://13343894324", 
+			FlyIdle = "rbxassetid://13343895599" 
+		}
+		
+		return module
+	end
+}
+
+--// Scripts
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	wait(0.2)
+	script.Parent.Parent:TweenPosition(UDim2.new(0.824, 0,0.965, 0),Enum.EasingDirection.In,Enum.EasingStyle.Sine,0.2)
+	
+	script.Parent.MouseEnter:Connect(function()
+		script.Parent.Parent:TweenPosition(UDim2.new(0.824, 0,0.657, 0),Enum.EasingDirection.In,Enum.EasingStyle.Sine,0.2)
+	end)
+	
+	script.Parent.MouseLeave:Connect(function()
+		script.Parent.Parent:TweenPosition(UDim2.new(0.824, 0,0.965, 0),Enum.EasingDirection.In,Enum.EasingStyle.Sine,0.2)
+	end)
+end)
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script_2
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	local plr = game.Players.LocalPlayer
+	local flying = false
+	
+	script.Parent.FocusLost:Connect(function(enter)
+		if enter == true then
+			if script.Parent.Text == "sethpto0" or script.Parent.Text == "SetHpTo0" or script.Parent.Text == "SETHPTO0" then
+				plr.Character.Humanoid.Health = 0
+			elseif script.Parent.Text == "Fly" or script.Parent.Text == "fly" or script.Parent.Text == "FLY" then
+			script.Parent.Flying.Disabled = false	
+				script.Parent.Parent.Warn.Text.Value = "WARNING! Double jump to activate fly"
+				script.Parent.Parent.Warn.Value.Value = true
+		elseif script.Parent.Text == "UnFly" or script.Parent.Text == "unfly" or script.Parent.Text == "UNFLY" then
+			script.Parent.Flying.Disabled = true
+			end
+			end
+	end)
+end)
+
+-- Flying
+task.spawn(function()
+	local script = flying
+	script.Disabled = true
+
+	script:GetPropertyChangedSignal("Disabled"):Wait()
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	local player = game.Players.LocalPlayer
+	local settings = require(script.Parent.FlyingModule)
+	wait(0.2)
+	
+	
+	
+	local char = player.Character or player.CharacterAdded:Wait()
+	local hum = char.Humanoid
+	
+	local cam = workspace.CurrentCamera
+	local uis = game:GetService("UserInputService")
+	
+	local anim = Instance.new("Animation", script)
+	anim.AnimationId = settings.FlyIdle
+	local idleAnim = hum:LoadAnimation(anim)
+	
+	local anim = Instance.new("Animation", script)
+	anim.AnimationId = settings.FlyForward
+	local forwardAnim = hum:LoadAnimation(anim)
+	
+	local flightForce
+	
+	
+	
+	local flying = false
+	local function ToggleFlying()
+		if not flying and hum.FloorMaterial == Enum.Material.Air then
+			flying = true
+	
+			char.Animate.Disabled = true
+			idleAnim:Play()
+	
+			if flightForce ~= nil then flightForce:Destroy() end
+			flightForce = Instance.new("BodyVelocity", char.PrimaryPart)
+			flightForce.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+			flightForce.Velocity = hum.MoveDirection*settings.Speed
+	
+			while flying do
+				hum:ChangeState("Swimming")
+				hum:SetStateEnabled('GettingUp',false) 
+	
+				flightForce.Velocity = hum.MoveDirection*settings.Speed
+	
+				if hum.MoveDirection ~= Vector3.new() then 
+					if not forwardAnim.IsPlaying then
+						idleAnim:Stop()
+						forwardAnim:Play()
+					end
+				else -- Player not moving
+					if forwardAnim.IsPlaying then
+						forwardAnim:Stop()
+						idleAnim:Play()
+					end
+				end
+				wait()
+			end
+			
+			--Stopped flying
+			flightForce:Destroy()
+			hum:SetStateEnabled('GettingUp',true)
+			char.Animate.Disabled = false
+			idleAnim:Stop()
+			forwardAnim:Stop()
+		elseif flying then --Stop flying
+			flying = false
+		end
+	end
+	
+	--//Input
+	--PC/Xbox
+	uis.InputBegan:Connect(function(key, processed)
+		if key.KeyCode == Enum.KeyCode.Space or key.KeyCode == Enum.KeyCode.ButtonA then
+			ToggleFlying()
+		end
+	end)
+	
+	--Mobile
+	local jumpButton
+	if uis.TouchEnabled then
+		pcall(function()
+			jumpButton = player:WaitForChild("PlayerGui"):WaitForChild("TouchGui"):WaitForChild("TouchControlFrame"):WaitForChild("JumpButton")
+		end)
+	end
+	if jumpButton ~= nil then
+		jumpButton.MouseButton1Down:Connect(ToggleFlying)
+	end
+end)
+
+-- LocalScript
+task.spawn(function()
+	local script = local_script_3
+
+	local oldreq = require
+	local function require(target)
+		if modules[target] then
+			return modules[target]()
+		end
+		return oldreq(target)
+	end
+
+	script.Parent.Value.Changed:Connect(function()
+		if script.Parent.Value.Value == true then
+			script.Parent.Value.Value = false
+			script.Parent.TextLabel.Text = script.Parent.Text.Value
+			local t = script.Parent:Clone()
+			t.Parent = script.Parent.Parent
+			t.LocalScript:Destroy()
+			t:TweenPosition(UDim2.new(0, 0,0.762, 0),Enum.EasingDirection.In,Enum.EasingStyle.Sine,0.5)
+			wait(0.5)
+			t.Frame:TweenPosition(UDim2.new(-0.933, 0,0.882, 0),"Out","Sine",2.5)
+			wait(2.5)
+			t:TweenPosition(UDim2.new(-0.275, 0,0.762, 0),Enum.EasingDirection.In,Enum.EasingStyle.Sine,0.5)
+			wait(0.5)
+			t:Destroy()
+		end
+	end)
+end)
