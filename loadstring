@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/MikeScripter/Mani-Admin/main/MainScript", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MikeScripter/Mani-Admin/main/MainScript.lua", true))()
